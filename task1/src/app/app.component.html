@@ -1,0 +1,23 @@
+<!-- <div class="app-container">
+  <div class = "heading">
+  <h1>{{ title }}</h1>
+</div>
+
+  <div class = "image">
+    <img src = "https://cdn0.iconfinder.com/data/icons/e-learning-1-1/50/43-512.png"/>
+  </div>
+  <app-employee-list (toggleForm)="toggleAddForm()"></app-employee-list>
+  <app-employee-add *ngIf="showAddForm" (employeeAdded)="onEmployeeAdded()"></app-employee-add>
+</div> -->
+
+
+<div class="app-container">
+  <div class="heading">
+    <h1>{{ title }}</h1>
+    <div class="image">
+      <img src="https://th.bing.com/th/id/OIP.tb0-Zq_NhUTwVnUpZF4p3wHaHa?rs=1&pid=ImgDetMain" alt="Icon"/>
+    </div>
+  </div>
+  <app-employee-list (toggleForm)="toggleAddForm()"></app-employee-list>
+  <app-employee-add *ngIf="showAddForm" (employeeAdded)="onEmployeeAdded()"></app-employee-add>
+</div>

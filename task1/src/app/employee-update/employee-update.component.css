@@ -1,0 +1,233 @@
+   /* .employee-update-form {
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    padding: 20px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 750px;
+    margin: auto;
+  }
+  
+  .employee-update-form h2 {
+    color: #065a9c;
+    margin-bottom: 20px; 
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-container {
+    max-width: 100%; 
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+    margin-bottom: 10px; 
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .mat-form-field {
+    flex: 1;
+  }
+  
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #3498db;
+  }
+  
+  .mat-form-field.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #3498db;
+  }
+  
+  button {
+    margin: 10px auto; 
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .designation-fields {
+    display: flex;
+    gap: 10px; 
+    margin-bottom: 20px; 
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .designation-fields mat-form-field {
+    flex: 1;
+  }
+  
+  .success-snackbar {
+    background-color: #4caf50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .success-snackbar::before {
+    content: '✔';
+    margin-right: 8px;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .error-snackbar::before {
+    content: '❌';
+    margin-right: 8px;
+  }
+  
+
+  @media (max-width: 768px) {
+    .employee-update-form {
+      padding: 15px;
+    }
+  
+    .form-fields {
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .employee-update-form {
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 750px;
+    margin: auto;
+    max-height: 80vh; /* Set maximum height */
+    overflow-y: auto; 
+  }
+  
+  .employee-update-form h2 {
+    color: #065a9c;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-container {
+    max-width: 100%;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+  button {
+    margin: 10px auto;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .designation-fields {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .success-snackbar {
+    background-color: #4caf50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .success-snackbar::before {
+    content: '✔';
+    margin-right: 8px;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .error-snackbar::before {
+    content: '❌';
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .employee-update-form {
+      padding: 15px;
+    }
+  
+    .form-fields {
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+  
+    button {
+      padding: 8px 16px;
+    }
+  }
+  

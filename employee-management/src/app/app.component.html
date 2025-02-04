@@ -1,0 +1,132 @@
+<h1>Counter App</h1>
+<!--<button (click)="handleClickEvent()">Click Me</button>
+<button (click)="sum(10,20)">Sum</button> -->
+
+<div style ="text-align: center;">
+  <h2 class = "count">{{count}}</h2>
+  <div>
+    <button (click)="handleCounter('minus')"class = "btn bg-red">Decrement</button>
+    <button (click)="handleCounter('reset')"class = "btn bg-black">Reset</button>
+    <button (click)="handleCounter('plus')"class = "btn bg-green">Increment</button>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+
+<hr>
+
+<h2>Events in Angular</h2>
+
+<button class ="event_button" name = "login" (click) = "handleEvent($event)">Click Event</button>
+<br>
+<br>
+
+<div
+(mouseenter)="handleEvent($event)"
+style = "background-color: green; width:100px;height: 100px;">
+</div>
+
+<div
+(mouseleave)="handleEvent($event)"
+style = "background-color: rgb(6, 0, 128); width:100px;height: 100px;">
+</div>
+
+<br>
+<br>
+
+<input type="text" 
+(focus)="handleEvent($event)"
+(input)="handleEvent($event)"
+(blur)="handleEvent($event)"
+name = "user"> 
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------- -->
+
+<hr>
+
+<br><br>
+<h2>Get and Set Input Field Value</h2>
+<h2>User Name is : {{displayName}}</h2>
+<input type ="text" value = {{name}} (input)="getName($event)" placeholder ="Enter user name">
+<br><br>
+<button (click)="showName()"> Get Name</button>
+<button (click)="setName()"> Set Name</button>
+
+<br>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+<hr>
+
+<h2>Getting and Setting values with Template Reference Variable</h2>
+<input type ="text" placeholder ="Enter user email" #emailField>
+<button (click)="getEmail(emailField.value)"> Get Email</button>
+<button> Set Email</button>
+
+<!-- --------------------------------------------------- Directives ---------------------------------------------------- -->
+ <hr>
+ <h1> *ngFor Directive in Angular</h1>
+
+ <ul>
+  <li *ngFor = "let x of students">
+    {{x}}
+  </li>
+ </ul>
+
+ <h2>*ngFor Directive in Objects</h2>
+ <ul>
+  <li *ngFor = "let student of studentsData">
+    {{student.name}},{{student.age}}
+  </li>
+ </ul>
+
+ <h2>*ngIf Directive in Angular</h2>
+
+ <h3 *ngIf = "show">Show if true</h3>
+
+ <h2> if - else condition (if login = true (show logout) else (show login)</h2>
+
+ <div *ngIf = "login; else elseBlock">
+  <a href ="">logout</a>
+ </div>
+
+ <ng-template #elseBlock>
+  <a href ="">login</a>
+ </ng-template>
+
+ <h2>Multiple if - else</h2>
+
+ <div *ngIf = "block==0">
+  <h4>heading 0</h4>
+ </div>
+
+ <div *ngIf = "block==1">
+  <h4>heading 1</h4>
+ </div>
+
+ <div *ngIf = "block==2">
+  <h4>heading 2</h4>
+ </div>
+
+ <div *ngIf = "block==3">
+  <h4>heading 3</h4>
+ </div>
+
+ <button (click)="updateBlock()">Update Block</button>
+
+ <div>
+  <!-- Example usage of NgSwitch -->
+  <div [ngSwitch]="color">
+    <h3 *ngSwitchCase="'red'" style="background-color: red;">Red Color</h3>
+    <h3 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h3>
+    <h3 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h3>
+    <h3 *ngSwitchDefault>No color Match</h3>
+  </div>
+</div>
+
+<button (click)="changeColor('red')"> Red</button>
+<button (click)="changeColor('blue')"> Blue</button>
+<button (click)="changeColor('green')"> Green</button>
+<button (click)="changeColor('orange')"> Other Color</button>
+
+ 
+

@@ -1,0 +1,162 @@
+  <!-- <div class="search-container">
+    <div class="search-section">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search by Employee ID</mat-label>
+        <input matInput [(ngModel)]="searchQuery" placeholder="Enter ID">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="search-button" (click)="search()">Search</button>
+    </div>
+    
+    <div class="filters-section">
+      <div class="filters-wrapper">
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Designation Code</mat-label>
+          <mat-select [(ngModel)]="designationCode" (ngModelChange)="applyFilters()" placeholder="Select Designation Code">
+            <mat-option *ngFor="let code of designationCodes" [value]="code">{{ code }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Department</mat-label>
+          <mat-select [(ngModel)]="department" (ngModelChange)="applyFilters()" placeholder="Select Department">
+            <mat-option *ngFor="let dept of departments" [value]="dept">{{ dept }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="button-container">
+        <button mat-raised-button color="accent" class="add-employee-button" (click)="openAddEmployeeForm()">
+          <mat-icon class="large-icon">person_add</mat-icon>
+        </button>
+        <button mat-raised-button color="primary" class="update-employee-button" (click)="openUpdateEmployeeForm()">
+          <mat-icon class="large-icon">edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <table mat-table [dataSource]="filteredEmployees" class="mat-elevation-z8 employee-table" matSort>
+    <ng-container matColumnDef="employeeId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Employee ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="employeeName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Employee Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Department </th>
+      <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container>
+    <ng-container matColumnDef="designation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Designation </th>
+      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    </ng-container>
+    <ng-container matColumnDef="designationCode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Designation Code </th>
+      <td mat-cell *matCellDef="let element"> {{element.designationCode}} </td>
+    </ng-container>
+    <ng-container matColumnDef="joiningDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Joining Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.joiningDate | date}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <div class="paginator-container">
+    <mat-paginator [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>    -->
+
+
+
+
+     <div class="search-container">
+      <div class="search-section">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search by Employee ID</mat-label>
+          <input matInput [(ngModel)]="searchQuery" placeholder="Enter ID">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="search-button" (click)="search()">Search</button>
+      </div>
+      
+      <div class="filters-section">
+        <div class="filters-wrapper">
+          <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Designation Code</mat-label>
+            <mat-select [(ngModel)]="designationCode" (ngModelChange)="applyFilters()" placeholder="Select Designation Code">
+              <mat-option *ngFor="let code of designationCodes" [value]="code">{{ code }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field appearance="outline" class="filter-field">
+            <mat-label>Department</mat-label>
+            <mat-select [(ngModel)]="department" (ngModelChange)="applyFilters()" placeholder="Select Department">
+              <mat-option *ngFor="let dept of departments" [value]="dept">{{ dept }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="button-container">
+          <button mat-raised-button color="accent" class="add-employee-button" (click)="openAddEmployeeForm()">
+            <mat-icon class="large-icon">person_add</mat-icon>
+          </button>
+          <button mat-raised-button color="primary" class="update-employee-button" (click)="openUpdateEmployeeForm()">
+            <mat-icon class="large-icon">edit</mat-icon>
+          </button>
+          <button mat-raised-button color="warn" class="clear-filters-button" (click)="clearFilters()">
+            <mat-icon class="large-icon">clear</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <table mat-table [dataSource]="filteredEmployees" class="mat-elevation-z8 employee-table" matSort>
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Employee ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Employee Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Department </th>
+        <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+      </ng-container>
+      <ng-container matColumnDef="designation">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Designation </th>
+        <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+      </ng-container>
+      <ng-container matColumnDef="designationCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Designation Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.designationCode}} </td>
+      </ng-container>
+      <ng-container matColumnDef="joiningDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="custom-sort-header"> Joining Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.joiningDate | date}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <div class="paginator-container">
+      <mat-paginator [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

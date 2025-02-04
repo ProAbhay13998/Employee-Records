@@ -1,0 +1,122 @@
+  <!-- <div class="employee-add-form container-sm mt-5 p-3">
+    <div class="form-container mx-auto">
+        <h2 class="text-center text-primary">Add New Employee</h2>
+        <div class="form-fields row">
+            <div class="col-md-6 mx-auto">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Employee Name</mat-label>
+                    <input matInput [(ngModel)]="employee.empName" placeholder="Enter Name" class="form-control" required>
+                    <mat-error *ngIf="employee.empName && !isEmployeeNameValid()">
+                        Name must be between 3 and 50 characters, and contain no special characters or digits.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Department</mat-label>
+                    <mat-select [(ngModel)]="employee.department" class="form-control" required placeholder="Select Department">
+                        <mat-option *ngFor="let department of departments" [value]="department">{{ department }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Joining Date</mat-label>
+                    <input matInput [(ngModel)]="employee.joiningDate" placeholder="Enter Joining Date" type="date" class="form-control" required class="form-control" required>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Designation Code</mat-label>
+                    <mat-select [(ngModel)]="employee.designation.designationCode" (selectionChange)="onDesignationCodeChange()" placeholder="Select Designation Code">
+                        <mat-option *ngFor="let designation of designations" [value]="designation.code" class="form-control" required>{{ designation.code }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Designation</mat-label>
+                    <input matInput [(ngModel)]="employee.designation.designation" placeholder="Enter Designation" class="form-control" readonly>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-actions d-flex justify-content-center">
+            <button class="btn btn-primary mx-2" (click)="addEmployee()">Save</button>
+            <button class="btn btn-secondary mx-2" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="employee-add-form container-sm mt-5 p-3">
+  <div class="form-container mx-auto">
+    <h2 class="text-center text-primary">Add New Employee</h2>
+    <div class="form-fields row">
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="empName">Employee Name</label>
+          <input type="text" id="empName" [(ngModel)]="employee.empName" (blur)="validateField('empName')" (input)="clearError('empName')" placeholder="Enter Name" class="form-control" required>
+          <div *ngIf="!employee.empName && showError['empName']" class="error-message">
+            Employee Name is required.
+          </div>
+          <div *ngIf="employee.empName && !isEmployeeNameValid()" class="error-message">
+            Name must be between 3 and 50 characters, and contain no special characters or digits.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" [(ngModel)]="employee.department" (blur)="validateField('department')" (input)="clearError('department')" class="form-control" required>
+            <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+          </select>
+          <div *ngIf="!employee.department && showError['department']" class="error-message">
+            Department is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="joiningDate">Joining Date</label>
+          <input type="date" id="joiningDate" [(ngModel)]="employee.joiningDate" (blur)="validateField('joiningDate')" (input)="clearError('joiningDate')" placeholder="Enter Joining Date" class="form-control" required>
+          <div *ngIf="!employee.joiningDate && showError['joiningDate']" class="error-message">
+            Joining Date is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="designationCode">Designation Code</label>
+          <select id="designationCode" [(ngModel)]="employee.designation.designationCode" (change)="onDesignationCodeChange()" (blur)="validateField('designationCode')" (input)="clearError('designationCode')" class="form-control" required>
+            <option *ngFor="let designation of designations" [value]="designation.code">{{ designation.code }}</option>
+          </select>
+          <div *ngIf="!employee.designation.designationCode && showError['designationCode']" class="error-message">
+            Designation Code is required.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <div class="form-group">
+          <label for="designation">Designation</label>
+          <input type="text" id="designation" [(ngModel)]="employee.designation.designation" (blur)="validateField('designation')" (input)="clearError('designation')" placeholder="Enter Designation" class="form-control" readonly>
+          <div *ngIf="!employee.designation.designation && showError['designation']" class="error-message">
+            Designation is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions d-flex justify-content-center">
+      <button class="btn btn-primary mx-2" (click)="addEmployee()">Save</button>
+      <button class="btn btn-secondary mx-2" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>
